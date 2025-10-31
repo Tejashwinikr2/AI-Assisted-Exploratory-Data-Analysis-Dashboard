@@ -89,11 +89,11 @@ Click “Deploy” and share your live link.
 
 📸 Screenshots
 🧩 Upload & Preview
-<img src="assets/upload csv.png assets/preview dataset.png assets/preview dataset 02.png" width="800" alt="Upload CSV and preview dataset"/>
+<img src="upload csv.png preview dataset.png preview dataset 02.png" width="800" alt="Upload CSV and preview dataset"/>
 🔥 Correlation Heatmap
-<img src="assets/heatmap-plot.png" width="800" alt="Correlation heatmap"/>
+<img src="heatmap-plot.png" width="800" alt="Correlation heatmap"/>
 🤖 AI-Generated Insight
-<img src="assets/gemini-explanation.png" width="800" alt="AI explanation of heatmap"/>
+<img src="gemini-explanation.png" width="800" alt="AI explanation of heatmap"/>
 🎥 Live Demo (Optional)
 
 🧠 Example Insight
@@ -164,5 +164,6 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 
 Seaborn & Matplotlib – for visualization
+
 
 Pandas – for data handling
