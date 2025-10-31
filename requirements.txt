@@ -1,0 +1,16 @@
+# Core App Framework
+streamlit>=1.38.0
+
+# Data Handling
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualization
+seaborn>=0.13.0
+matplotlib>=3.9.0
+
+# Environment Management
+python-dotenv>=1.0.1
+
+# Google Gemini SDK (new official library)
+google-genai>=0.2.0
