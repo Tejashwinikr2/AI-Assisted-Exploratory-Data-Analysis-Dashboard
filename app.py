@@ -46,8 +46,8 @@ if uploaded_file is not None:
             You are a data visualization expert.
             Analyze this correlation heatmap summary:
             {corr.to_string(index=True)}
-            Explain the data in simple,understandable languages what the chart indicates.
-            Highlight weak or strong correlations, potential insights,
+            Explain in simple, clear language what the chart indicates.
+            Highlight strong or weak correlations, potential insights,
             and how these relationships could impact business or analysis decisions.
             """
 
@@ -63,22 +63,15 @@ if uploaded_file is not None:
         st.warning("No numeric columns found for correlation heatmap.")
 else:
     st.info("Upload a CSV file to begin your analysis.")
-
 if uploaded_file is not None:
     language = st.selectbox("Choose explanation language", ["English", "Hindi", "Kannada", "Telugu"])
     lang_map = {"English": "English", "Hindi": "Hindi", "Kannada": "Kannada", "Telugu": "Telugu"}
-
     if 'df' in locals():
         numeric_df = df.select_dtypes(include=np.number)
         if not numeric_df.empty:
             if st.button("Explain Heatmap with Gemini (Multilingual)"):
-                st.subheader("Gemini Multilingual Heatmap Explanation")
-                prompt = f"""You are a data visualization expert. Analyze this correlation matrix and explain in {lang_map[language]} in simple, clear language what the main relationships are, highlighting strong positive or negative correlations, weak or near-zero relationships, and practical implications for analysis or business decisions. Provide actionable suggestions where appropriate.
-
-Correlation matrix:
-{corr.to_string(index=True)}
-Respond only in {lang_map[language]}."""
                 with st.spinner("Generating explanation..."):
+                    prompt = f"You are a data visualization expert. Analyze this correlation matrix and explain in {lang_map[language]} in simple, clear language what the main relationships are, highlighting strong positive or negative correlations, weak or near-zero relationships, and practical implications for analysis or business decisions. Provide actionable suggestions where appropriate.\n\nCorrelation matrix:\n{corr.to_string(index=True)}\n\nRespond only in {lang_map[language]}."
                     try:
                         response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
                         text = getattr(response, "text", None) or response
@@ -86,28 +79,21 @@ Respond only in {lang_map[language]}."""
                         st.write(text)
                     except Exception as e:
                         st.error(f"Failed to generate explanation: {e}")
-
             if st.button("Explain Dataset Summary with Gemini (Multilingual)"):
-                st.subheader("Gemini Multilingual Dataset Summary")
-                top_corr_pairs = []
-                num = numeric_df
-                if num.shape[1] >= 2:
-                    abs_corr = num.corr().abs()
-                    abs_corr.values[np.triu_indices_from(abs_corr.values)] = np.nan
-                    flat = abs_corr.unstack().dropna().sort_values(ascending=False)
-                    for idx, val in flat.head(5).items():
-                        a, b = idx
-                        top_corr_pairs.append((a, b, float(val)))
-                summary_text = f"Rows: {rows}, Columns: {cols}, Total missing values: {missing}\n\nTop numeric columns summary:\n{numeric_df.describe().transpose().head(10).to_string()}\n\nTop correlation pairs:\n"
-                for a, b, v in top_corr_pairs:
-                    summary_text += f"{a} <> {b}: {round(v,2)}\n"
-                prompt = f"""You are a data analyst. In {lang_map[language]}, provide a concise, user-friendly summary of the dataset below, call out any data quality issues, key numeric summaries, important correlations, and recommended next steps for preprocessing or modeling. Keep bullets short and actionable.
-
-Dataset summary:
-{summary_text}
-
-Respond only in {lang_map[language]}."""
                 with st.spinner("Generating dataset summary..."):
+                    top_corr_pairs = []
+                    num = numeric_df
+                    if num.shape[1] >= 2:
+                        abs_corr = num.corr().abs()
+                        abs_corr.values[np.triu_indices_from(abs_corr.values)] = np.nan
+                        flat = abs_corr.unstack().dropna().sort_values(ascending=False)
+                        for idx, val in flat.head(5).items():
+                            a, b = idx
+                            top_corr_pairs.append((a, b, float(val)))
+                    summary_text = f"Rows: {rows}, Columns: {cols}, Total missing values: {missing}\n\nTop numeric columns summary:\n{numeric_df.describe().transpose().head(10).to_string()}\n\nTop correlation pairs:\n"
+                    for a, b, v in top_corr_pairs:
+                        summary_text += f"{a} <> {b}: {round(v,2)}\n"
+                    prompt = f"You are a data analyst. In {lang_map[language]}, provide a concise, user-friendly summary of the dataset below, call out any data quality issues, key numeric summaries, important correlations, and recommended next steps for preprocessing or modeling. Keep bullets short and actionable.\n\nDataset summary:\n{summary_text}\n\nRespond only in {lang_map[language]}."
                     try:
                         response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
                         text = getattr(response, "text", None) or response
@@ -117,3 +103,34 @@ Respond only in {lang_map[language]}."""
                         st.error(f"Failed to generate summary: {e}")
         else:
             st.warning("No numeric columns found for multilingual explanations.")
+if uploaded_file is not None:
+    if 'df' in locals():
+        numeric_df = df.select_dtypes(include=np.number)
+        if not numeric_df.empty:
+            if st.checkbox("Auto-generate charts (histograms & box plots)"):
+                st.subheader("Auto-generated Histograms")
+                for col in numeric_df.columns:
+                    data = numeric_df[col].dropna()
+                    if data.empty:
+                        continue
+                    fig, ax = plt.subplots()
+                    try:
+                        sns.histplot(data, kde=True, ax=ax)
+                    except Exception:
+                        ax.hist(data)
+                    ax.set_title(f"Histogram: {col}")
+                    st.pyplot(fig)
+                st.subheader("Auto-generated Box Plots")
+                for col in numeric_df.columns:
+                    data = numeric_df[col].dropna()
+                    if data.empty:
+                        continue
+                    fig, ax = plt.subplots()
+                    try:
+                        sns.boxplot(x=data, ax=ax)
+                    except Exception:
+                        ax.boxplot(data)
+                    ax.set_title(f"Box plot: {col}")
+                    st.pyplot(fig)
+        else:
+            st.info("No numeric columns available for auto-generated charts.")
