@@ -3,16 +3,16 @@
  [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)  
  [![Google Gemini](https://img.shields.io/badge/AI%20Model-Gemini%202.5%20Flash-4285F4?logo=google)](https://ai.google.dev/gemini-api)  
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
-##Project Overview  
-An interactive **AI-powered dashboard** for Exploratory Data Analysis (EDA).  
-Using a simple CSV upload, you’ll visualize your dataset, get summary statistics, view correlation heatmaps, and receive clear **natural-language insights** with the help of the Google‑GenAI SDK and the Gemini 2.5 Flash model.
-##Features  
-- Upload any CSV file easily  
-- Instant dataset preview & summary (rows, columns, missing values, statistics)  
-- Visualize numeric-column correlation with a heatmap  
-- Get AI-generated explanations for the correlation heatmap  
-- Built with Streamlit for a lightweight, interactive experience  
-- Uses `.env` for secure API key storage
+#Project Overview  
+An interactive **AI-EDA-Dashboard**
+Using a CSV upload, you can visualize your dataset, get statistics with summary,  and can view correlation heatmaps, and receive natural-language insights with the help of the Google‑GenAI SDK and Gemini 2.5 Flash model.
+#Features  
+- Upload any CSV dataset file easily  
+- Get instant dataset preview & summary (rows, columns, missing values, statistics)  
+- Visualize numeric column correlation with a heatmap  
+- we can get AI generated explanations for the correlation heatmap  
+- Built this with Streamlit for a lightweight, a good interactive experience  
+- we can uses`.env` for secure API key storage 
   
 Screenshots:
 <img width="1366" height="720" alt="Screenshot 2025-10-31 201635" src="https://github.com/user-attachments/assets/6f741543-5e3a-4c77-b91c-6ab26a19247e" />
@@ -22,8 +22,8 @@ Screenshots:
 <img width="1366" height="720" alt="Screenshot 2025-10-31 202746" src="https://github.com/user-attachments/assets/3f86c704-512a-4d29-92e5-f23c567be508" />
 
 ##Why Use This?  
-**Time-saving:** Automates ,what typically takes hours in manual EDA  
-**Insightful:** Converts correlation matrices into readable, actionable insights 
+**Time saving:** Automates ,what typically takes hours in manual EDA 
+**Insightful:** Converts matrices correlation into readable, actionable insights 
 **Accessible:** No heavy coding needed — great for analysts & non-developers  
 **Visual:** Heatmaps make relationships easy to spot  
 **Expandable:** Base framework for further AI-driven analytics  
@@ -152,6 +152,7 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 Seaborn & Matplotlib – for visualization
 Pandas – for data handling
+
 
 
 
