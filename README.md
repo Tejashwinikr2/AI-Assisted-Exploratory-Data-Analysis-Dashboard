@@ -1,8 +1,8 @@
-<img width="1366" height="720" alt="Screenshot 2025-10-31 201635" src="https://github.com/user-attachments/assets/6f741543-5e3a-4c77-b91c-6ab26a19247e" />#AI-Assisted Exploratory Data **Analysis Dashboard**  
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)  
-[![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)  
-[![Google Gemini](https://img.shields.io/badge/AI%20Model-Gemini%202.5%20Flash-4285F4?logo=google)](https://ai.google.dev/gemini-api)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+#AI-Assisted Exploratory Data **Analysis Dashboard**  
+ [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)  
+ [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)  
+ [![Google Gemini](https://img.shields.io/badge/AI%20Model-Gemini%202.5%20Flash-4285F4?logo=google)](https://ai.google.dev/gemini-api)  
+ [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
 ##Project Overview  
 An interactive **AI-powered dashboard** for Exploratory Data Analysis (EDA).  
 Using a simple CSV upload, you’ll visualize your dataset, get summary statistics, view correlation heatmaps, and receive clear **natural-language insights** with the help of the Google‑GenAI SDK and the Gemini 2.5 Flash model.
@@ -28,9 +28,6 @@ Using a simple CSV upload, you’ll visualize your dataset, get summary statisti
 | Visualization     | Seaborn, Matplotlib            |
 | AI / NLP          | Google-GenAI SDK (Gemini 2.5)  |
 | Environment setup | python-dotenv                  |
-
----
-
 ##Installation & Setup  
 ### 1. Clone the repository  
 ```bash
@@ -81,7 +78,13 @@ Correlation Heatmap
 <img src="heatmap-plot.png" width="800" alt="Correlation heatmap"/>
 AI-Generated Insight
 <img src="gemini-explanation.png" width="800" alt="AI explanation of heatmap"/>
-Live Demo (Optional)
+
+Screenshots:
+<img width="1366" height="720" alt="Screenshot 2025-10-31 201635" src="https://github.com/user-attachments/assets/6f741543-5e3a-4c77-b91c-6ab26a19247e" />
+<img width="1366" height="720" alt="Screenshot 2025-10-31 201726" src="https://github.com/user-attachments/assets/207f6567-bb29-41c8-a620-af417cce6bae" />
+<img width="1366" height="720" alt="Screenshot 2025-10-31 201744" src="https://github.com/user-attachments/assets/df7be9f4-1898-481b-996e-234f592504b9" />
+<img width="1366" height="720" alt="Screenshot 2025-10-31 202626" src="https://github.com/user-attachments/assets/96c3a624-dce4-437f-902c-7771f30d0b4a" />
+<img width="1366" height="720" alt="Screenshot 2025-10-31 202746" src="https://github.com/user-attachments/assets/3f86c704-512a-4d29-92e5-f23c567be508" />
 
 Example Insight
 The strong positive colleration between Experience and Salary suggest that more experience employees tends to earn higher salaries.
@@ -149,4 +152,5 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 Seaborn & Matplotlib – for visualization
 Pandas – for data handling
+
 
