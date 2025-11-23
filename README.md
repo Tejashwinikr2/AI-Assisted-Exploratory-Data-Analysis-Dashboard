@@ -136,8 +136,6 @@ Export AI-generated reports as PDF/Word
 
 Support for Excel, JSON, and large datasets
 
-Multi-language AI explanation support
-
 Author & Contact
 
 Tejashwini K R
@@ -152,6 +150,7 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 Seaborn & Matplotlib – for visualization
 Pandas – for data handling
+
 
 
 
