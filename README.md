@@ -3,16 +3,27 @@
  [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)  
  [![Google Gemini](https://img.shields.io/badge/AI%20Model-Gemini%202.5%20Flash-4285F4?logo=google)](https://ai.google.dev/gemini-api)  
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+ 
 #Project Overview  
-An interactive **AI-EDA-Dashboard**
-Using a CSV upload, you can visualize your dataset, get statistics with summary,  and can view correlation heatmaps, and receive natural-language insights with the help of the Google‑GenAI SDK and Gemini 2.5 Flash model.
-#Features  
-- Upload any CSV dataset file easily  
-- Get instant dataset preview & summary (rows, columns, missing values, statistics)  
-- Visualize numeric column correlation with a heatmap  
-- we can get AI generated explanations for the correlation heatmap  
-- Built this with Streamlit for a lightweight, a good interactive experience  
-- we can uses`.env` for secure API key storage 
+This dashboard provides an automated way to explore and understand datasets using AI-powered insights. After uploading a CSV file, the system generates descriptive statistics, visual summaries, correlation maps, and natural-language insights using the Google Gemini API. It is designed to make EDA easier for analysts, students, and non-technical users by combining automation with interactive visualizations.
+
+1. Automated Insights
+The dashboard reads the uploaded dataset and instantly produces structured summaries, highlighting trends, distributions, and potential patterns.
+2. AI-Generated Visuals
+Using the Gemini model, the tool can create charts and graphs that help users understand relationships between variables without manual coding.
+3. Correlation Heatmap
+It automatically computes correlations and presents them visually, making it easy to identify strong positive or negative relationships.
+4. Multi-Language Support
+Insights can be generated in several languages, helping users understand their data more comfortably.
+5. Interactive Dashboard
+Users can upload CSV files, explore summary metrics, and view AI-driven interpretations in a streamlined, user-friendly interface.
+
+Why This Dashboard?
+Saves Time: Eliminates the need to perform manual EDA steps that typically take hours.
+Beginner-Friendly: Users don’t need advanced Python or data analysis experience.
+Insight-Rich: Converts numerical output into meaningful sentences with the help of AI.
+Visually Clear: Heatmaps, charts, and summaries help reveal hidden trends quickly.
+Extendable: Can be enhanced with additional models, charts, or analytics modules.
   
 Screenshots:
 <img width="1366" height="720" alt="Screenshot 2025-10-31 201635" src="https://github.com/user-attachments/assets/6f741543-5e3a-4c77-b91c-6ab26a19247e" />
@@ -150,6 +161,7 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 Seaborn & Matplotlib – for visualization
 Pandas – for data handling
+
 
 
 
