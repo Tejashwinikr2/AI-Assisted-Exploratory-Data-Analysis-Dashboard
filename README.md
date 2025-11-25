@@ -5,8 +5,7 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
  
 #Project Overview  
-This dashboard provides an automated way to explore and understand datasets using AI-powered insights. After uploading a CSV file, the system generates descriptive statistics, visual summaries, correlation maps, and natural-language insights using the Google Gemini API. It is designed to make EDA easier for analysts, students, and non-technical users by combining automation with interactive visualizations.
-
+This application offers a smart and interactive way to understand datasets with the help of AI. Users can upload a CSV file, and the dashboard automatically produces summaries, visual reports, statistical highlights, and AI-generated observations using Google’s Gemini model. The goal is to simplify exploratory data analysis for anyone whether they are analysts, researchers, or beginners through clear visuals and automated insights.
 1. Automated Insights
 The dashboard reads the uploaded dataset and instantly produces structured summaries, highlighting trends, distributions, and potential patterns.
 2. AI-Generated Visuals
@@ -161,6 +160,7 @@ Gemini API – for powerful AI insights
 Streamlit – for fast interactive UI
 Seaborn & Matplotlib – for visualization
 Pandas – for data handling
+
 
 
 
